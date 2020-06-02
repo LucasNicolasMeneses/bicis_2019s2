@@ -1,0 +1,150 @@
+import accesoriosParaBicicletas.*
+import Bicicletas.*
+import Depositos.*
+
+test "bicicletas" {
+
+
+	// accesorios 
+	
+// crea un objeto farolito
+ const farolito =new Farolito()
+ // demuestra que el peso del farolito es 0,5
+ assert.equals(0.5,farolito.peso())
+ //demuuestra que la carga de el farolito es 0
+ assert.equals(0,farolito.carga())
+ // demuestra que el farolito es luminoso
+ assert.that(farolito.esLuminoso())   // no entiendo el mensaje sitema de tipos espera , que me marca a la izquierda
+ 
+
+ // crea un objeto farolito
+ const farolito2 =new Farolito()
+  // demuestra que el peso del farolito es 0,5
+ assert.equals(0.5,farolito2.peso())
+  //demuuestra que la carga de el farolito es 0
+ assert.equals(0,farolito2.carga())  // no entiendo el mensaje sitema de tipos espera , que me marca a la izquierda
+  // demuestra que el farolito es luminoso
+ assert.that(farolito2.esLuminoso())
+ 
+ // crea un objeto morral
+ const morral1 =new Morral()
+ // setea el largo de el morral
+ morral1.largo(21)
+ // comprueba que el largo del morral es 21
+ assert.equals(21,morral1.largo())
+ //setea la carga de el morral
+ morral1.setCarga()
+ // comprueba que la carga de el morral es 7
+ assert.equals(7,morral1.carga())
+ // setea y debuelve el peso de el morral
+ morral1.peso()
+ // comprueba que el peso de el morral sea 1,2
+ assert.equals(1.2,morral1.peso())
+ //comprueba que el morral sea luminoso
+ assert.that(morral1.esLuminoso())
+ // setea el ojo de gato de el morral
+ morral1.setOjoDeGato()
+ // comprueba que el morral no tien ojo de gato
+ assert.notThat(morral1.esLuminoso())
+  // setea el ojo de gato de el morral
+ morral1.setOjoDeGato()
+  //comprueba que el morral sea luminoso
+ assert.that(morral1.esLuminoso())
+ 
+ // crea un objeto morral
+ const morral2 =new Morral()
+  // setea el largo de el morral
+ morral2.largo(6)
+  // comprueba que el largo del morral es 6
+ assert.equals(6,morral2.largo())
+  //setea la carga de el morral2
+ morral2.setCarga()
+  // comprueba que la carga de el morral es 2
+ assert.equals(2,morral2.carga())    // no entiendo el mensaje sitema de tipos espera , que me marca a la izquierda
+   // setea el ojo de gato de el morral2
+ morral2.setOjoDeGato()
+ //comprueba que el morral no tiene ojo de Gato
+ assert.notThat(morral2.esLuminoso())
+ 
+ // crea un objeto canasto
+ const canasto1 =new Canasto()
+ // setea el volumen de el cnasto
+ canasto1.volumen(8)
+ // comprueba que el volumen de el canasto es 8
+ assert.equals(8,canasto1.volumen())
+ //setea la carga de el canasto
+ canasto1.setCarga()
+ // demuestra que la carga de le canasto es 16
+ assert.equals(16,canasto1.carga())
+ // setea el peso de el canasto
+ canasto1.setPeso()
+ // comprueba que el peso de el canasto es 0.8
+ assert.equals(0.8,canasto1.peso())
+ // comprueba que el canasto no es luminoso
+ assert.notThat(canasto1.esLuminoso())
+
+	   //Biciccletas
+  
+  // crea un objeto bicicleta
+ const bici1= new Bicicletas()	
+ const bici2= new Bicicletas()
+ const bici3= new Bicicletas()
+ // setea el largo De la Bici
+ bici1.largo(150)
+ // comprueba que el largo de bici 1 es 150
+ assert.equals(150,bici1.largo())
+ // setea el largo De la Bici
+ bici2.largo(110)
+ // comprueba que el largo de bici 2 es 110
+ assert.equals(110,bici2.largo())
+ // setea el largo De la Bici
+ bici3.largo(90)
+ // comprueba que el largo de bici 3 es 90
+ assert.equals(90,bici3.largo())
+ // setea el rodado De la Bici
+ bici1.rodado(28)
+ // comprueba que el rodado de bici 1 es 28
+  assert.equals(28,bici1.rodado())
+ // setea el rodado De la Bici
+ bici2.rodado(26)
+ // comprueba que el rodado de bici 2 es 26
+   assert.equals(26,bici2.rodado())
+ // setea el rodado De la Bici
+ bici3.rodado(20)
+ // comprueba que el rodado de bici 3 es 20
+   assert.equals(20,bici3.rodado())
+ // setea la Marca De la Bici 
+ bici1.marca("Olmo")
+ // comprueba que la marca de la bici es "Olmo"
+ assert.equals("Olmo",bici1.marca())
+ // setea la Marca De la Bici 
+ bici2.marca("Legnano")
+ // comprueba que la marca de la bici es "legnano"
+  assert.equals("Legnano",bici2.marca())
+ // setea la Marca De la Bici 
+ bici3.marca("Legnano")
+ // comprueba que la marca de la bici es "legnano"
+  assert.equals("Legnano",bici3.marca())
+   // setea elaccesorio De la Bici 
+ bici1. setAccesorio(farolito)
+  // comprueba que el accesorio de la bici1 sea farolito
+ assert.equals([farolito],bici1.accesorio())
+    // setea elaccesorio De la Bici2 sea farolito2   
+ bici2. setAccesorio(farolito2)
+  // comprueba que el accesorio de la bici2 sea farolito2
+  assert.equals([farolito2],bici2.accesorio())
+     // setea elaccesorio De la Bici   
+ bici2. setAccesorio(canasto1)
+  // comprueba que el accesorio de la bici sea farolito2,canasto1
+   assert.equals([farolito2,canasto1],bici2.accesorio())
+      // setea elaccesorio De la Bici    
+ bici2. setAccesorio(morral1)
+  // comprueba que el accesorio de la bici seafarolito2,canasto1,morral1
+   assert.equals([farolito2,canasto1,morral1],bici2.accesorio())
+      // setea elaccesorio De la Bici 
+ bici3. setAccesorio(morral2)
+  // comprueba que el accesorio de la bici sea morral2
+  assert.equals([morral2],bici3.accesorio()) 
+
+}
+
